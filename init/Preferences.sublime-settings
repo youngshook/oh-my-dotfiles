@@ -1,0 +1,36 @@
+{
+	"auto_complete_commit_on_tab": true,
+	"auto_find_in_selection": true,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Predawn/predawn.tmTheme",
+	"draw_minimap_border": true,
+	"fade_fold_buttons": false,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"*.sublime-workspace",
+		"*.scssc"
+	],
+	"folder_exclude_patterns":
+	[
+		".git",
+		"log",
+		"tmp/cache",
+		".vagrant"
+	],
+	"font_face": "Monaco",
+	"font_size": 12,
+	"highlight_line": true,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"save_on_focus_lost": true,
+	"spell_check": true,
+	"tab_size": 4,
+	"theme": "Seti.sublime-theme",
+	"translate_tabs_to_space": true,
+	"trim_trailing_white_space_on_save": true,
+	"update_check": false,
+	"word_wrap": true
+}

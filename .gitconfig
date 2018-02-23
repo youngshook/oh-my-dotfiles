@@ -1,0 +1,215 @@
+[alias]
+	br = branch
+	ci = commit
+	st = status
+	co = checkout
+
+	amend = commit --amend
+	who = shortlog -n -s --no-merges
+	g = grep -n --color -E
+    cp = cherry-pick -x
+
+	# Clone a repository including all submodules
+	cr = clone --recursive
+
+	# Commit all changes
+	ca = !git add -A && git commit -av
+
+	# Switch to a branch, creating it if necessary
+	go = checkout -B
+
+	##################### Reset #####################
+	unstage = reset HEAD --
+	resethead = reset HEAD --hard HEAD~
+	uncommit = reset --soft HEAD~
+
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+
+	# Credit an author on the latest commit
+	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
+	# Interactive rebase with the given number of latest commits
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
+	# Find branches containing commit
+	fb = "!f() { git branch -a --contains $1; }; f"
+	# Find tags containing commit
+	ft = "!f() { git describe --always --contains $1; }; f"
+	# Find commits by source code
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+	# Remove branches that have already been merged with master
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+    ##################### Diff #####################
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+	# Using 'git-blame-someone-else' command to blame someone else for your bad code.
+	bl = blame-someone-else
+
+	# Good-lookin' diffs with diff-highlight and more
+	dsf = "!git diff --color $@ | diff-so-fancy"
+
+	##################### Add #####################
+	# 'git add -u' handles deleted files, but not new files
+    # 'git add .' handles any current and new files, but not deleted
+    # 'git addall' now handles all changes
+    addall = !sh -c 'git add . && git add -u'
+
+    ##################### Pull #####################
+    # Pull in remote changes for the current repository and all its submodules
+	p = !"git pull; git submodule foreach git pull origin master"
+
+    ##################### Rebase #####################
+	# Handy shortcuts for rebasing
+	rb = rebase
+    rc = rebase --continue
+    rs = rebase --skip
+    ra = rebase --abort
+
+    ##################### Log #####################
+	lc = log --graph --color
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(bold cyan)%ai%x08%x08%x08%x08%x08%x08%x08%x08%x08%C(reset) - %s  %C(bold blue)<%an>%Creset' --abbrev-commit --
+	la = log --date-order --date=iso --graph --full-history --all --pretty=format:'%x08%x09%C(red)%h %C(bold cyan)%ai%x08%x08%x08%x08%x08%x08%x08%x08%x08%C(reset) %C(bold blue)%aN%C(reset)%C(bold yellow)%d %C(reset)%s'
+	ll = log --oneline --decorate -12 --color
+
+  	##################### Submodule #####################
+	sb = submodule
+  	sbi = submodule init
+  	sba = submodule add
+  	sbu = submodule update
+  	sbp = submodule foreach git pull
+  	sbc = submodule foreach git co master
+	sbr = submodule update --init --recursive
+
+	# Get commit hash from version
+	#Using: git show-rev-number 1.0.0
+	show-rev-number = !sh -c 'git rev-list --reverse --all | nl | awk \"{ if(\\$1 == "$0") { print \\$2 }}\"'
+
+[apply]
+
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+
+[core]
+	editor = vim
+	# Use custom `.gitignore_global` and `.gitattributes_global`
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and
+	# all kinds of trailing whitespace as an error.
+	# [default] trailing-space: looks for spaces at the end of a line
+	# [default] space-before-tab: looks for spaces before tabs at the beginning of
+	# a line
+	whitespace = space-before-tab,indent-with-non-tab,trailing-space
+	# Make `git rebase` safer on OS X
+	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+	trustctime = false
+	quotepath = false
+
+[diff]
+
+	tool = p4merge
+	# Detect copies as well as renames
+	renames = copies
+
+[difftool "p4merge"]
+	cmd = /Applications/p4merge.app/Contents/MacOS/p4merge "$LOCAL" "$REMOTE"
+	keepTemporaries = false
+  	trustExitCode = false
+  	keepBackup = false
+
+[commit]
+
+	# https://help.github.com/articles/signing-commits-using-gpg/
+	gpgsign = true
+
+[merge]
+	tool = p4merge
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+
+[mergetool "p4merge"]
+  cmd = /Applications/p4merge.app/Contents/MacOS/p4merge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"
+  keepTemporaries = false
+  trustExitCode = false
+  keepBackup = false
+
+[push]
+	default = tracking
+
+[http]
+	postBuffer = 524288000
+
+[http "https://github.com"]
+#	proxy = localhost:8118
+#	sslVerify = false
+
+[branch]
+    autosetuprebase = always
+
+[help]
+	autocorrect = 1
+
+[color]
+	# Use colors in Git commands that are capable of colored output when
+	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+	ui = true
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[color "status"]
+
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[user]
+	name = Young Shook
+	email = shook.young@gmail.com
+
+[github]
+	user = youngshook
+	token = c46cf054693a6cc56589c3cf28ea7ef5
+
+[sendemail]
+	chainreplyto = false
+	smtpserver = /usr/bin/msmtp
+
+# URL shorthands
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
+
+[pager]
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
