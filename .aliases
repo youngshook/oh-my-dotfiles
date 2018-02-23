@@ -35,17 +35,6 @@ alias cls="clear"
 alias la="ls -a"
 alias vi="vim"
 alias grep="grep --color=auto"
-alias -s html=subl
-alias -s rb=subl
-alias -s py=subl
-alias -s js=subl
-alias -s c=subl
-alias -s java=subl
-alias -s txt=subl
-alias -s gz='tar -xzvf'
-alias -s tgz='tar -xzvf'
-alias -s zip='unzip'
-alias -s bz2='tar -xjvf'
 
 #RBTools
 alias pr='rbt post -p -o --target-groups=iOSDevTeam  --branch=$(git symbolic-ref --short -q HEAD) --tracking-branch=origin/develop -g auto'

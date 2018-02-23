@@ -4,6 +4,9 @@
 	st = status
 	co = checkout
 
+  	amend = commit -S --amend
+  	cm = commit -S -m
+  	commit = commit -S
 	amend = commit --amend
 	who = shortlog -n -s --no-merges
 	g = grep -n --color -E
@@ -184,6 +187,7 @@
 [user]
 	name = Young Shook
 	email = shook.young@gmail.com
+	signingkey = 9347100FDAA94609
 
 [github]
 	user = youngshook
