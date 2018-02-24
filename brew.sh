@@ -117,5 +117,22 @@ brew install proxychains-ng
 brew install go
 brew install python3
 
+brew install caskroom/cask/brew-cask
+brew cask install google-chrome
+brew cask install dropbox
+brew cask install sublime-text
+brew cask install cheatsheet
+
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install qlmarkdown
+brew cask install quicklook-json
+brew cask install provisionql
+brew cask install qlprettypatch
+brew cask install quicklook-csv
+brew cask install betterzipql
+brew cask install webpquicklook
+brew cask install suspicious-package
+
 # Remove outdated versions from the cellar.
 brew cleanup

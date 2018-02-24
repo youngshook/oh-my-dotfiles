@@ -66,7 +66,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z brew ruby wd bundler gem rails rvm  rake sublime knife encode64 esr urltools nginx pod cp osx web-search extract)
+plugins=(git z brew ruby wd bundler gem rails rvm  rake sublime knife encode64 esr urltools nginx pod cp osx web-search extract zsh-syntax-highlighting zsh-autosuggestions)
 
 # User configuration
 
