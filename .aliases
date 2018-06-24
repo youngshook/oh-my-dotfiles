@@ -36,6 +36,9 @@ alias la="ls -a"
 alias vi="vim"
 alias grep="grep --color=auto"
 
+#Youtube-dl
+alias ddd="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'" 
+
 #RBTools
 alias pr='rbt post -p -o --target-groups=iOSDevTeam  --branch=$(git symbolic-ref --short -q HEAD) --tracking-branch=origin/develop -g auto'
 alias rsubmit='rbt close --close-type=submitted'
