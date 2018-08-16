@@ -15,6 +15,12 @@ function calc() {
   fi
   printf "\n"
 }
+
+## Starts recording the simulator.
+recsim() {
+    xcrun simctl io booted recordVideo "$1"
+}
+
 function myip() {
     curl -L -s http://myip.ipip.net
 }
