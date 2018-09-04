@@ -11,6 +11,8 @@ function doIt() {
 		--exclude "bootstrap.sh" \
 		--exclude "README.md" \
 		--exclude "LICENSE" \
+		--exclude "Gemfile" \
+		--exclude "to_gemfile.rb" \
 		-avh --no-perms . ~;
 	source ~/.bash_profile;
 	source ~/.zshrc;

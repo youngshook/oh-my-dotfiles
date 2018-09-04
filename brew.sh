@@ -133,6 +133,8 @@ brew cask install quicklook-csv
 brew cask install betterzipql
 brew cask install webpquicklook
 brew cask install suspicious-package
+brew cask install lepton
+
 
 # Remove outdated versions from the cellar.
 brew cleanup
