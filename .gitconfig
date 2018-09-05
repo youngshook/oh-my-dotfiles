@@ -25,6 +25,7 @@
 	unstage = reset HEAD --
 	resethead = reset HEAD --hard HEAD~
 	uncommit = reset --soft HEAD~
+	undo = reset HEAD~1 --mixed
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
@@ -94,6 +95,8 @@
 	# Get commit hash from version
 	#Using: git show-rev-number 1.0.0
 	show-rev-number = !sh -c 'git rev-list --reverse --all | nl | awk \"{ if(\\$1 == "$0") { print \\$2 }}\"'
+
+	##################### Git Flow #####################
 
 [apply]
 
