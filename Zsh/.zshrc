@@ -92,7 +92,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin/oclint-0.10.3/bin:$PATH"
 
-aria2c --conf-path="/Users/YoungShook/.aria2/aria2.conf" -D
 export SWIFTENV_ROOT="$HOME/.swiftenv"
 export PATH="$SWIFTENV_ROOT/bin:$PATH"
 export A_NDK_ROOT="$HOME/.ndk"

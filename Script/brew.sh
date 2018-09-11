@@ -40,6 +40,7 @@ brew install gnupg
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
 brew install grep
+brew install bat
 brew install openssh
 brew install screen
 

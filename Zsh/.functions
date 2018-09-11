@@ -362,3 +362,31 @@ function git_since_last_commit {
 
     echo "${hours_since_last_commit}h${minutes_since_last_commit}m ";
 }
+
+# Git-flow aliases
+
+gitcf() { git checkout feature/$1;}
+gffs() { git flow feature start $1;}
+gfff() { git flow feature finish -F $(git_flow_current_branch); }
+
+
+gch()  { git checkout hotfix/$1;}
+gfhs() { git flow hotfix start $1;}
+gfhf() { git fetch --tags; git pull origin master; git flow hotfix finish -F $(git_flow_current_branch); }
+
+gcr()  { git checkout release/$1;}
+gfrs() { git flow release start $1;}
+gfrf() { git flow release finish -F $(git_flow_current_branch); }
+
+git_flow_current_branch(){ git rev-parse --abbrev-ref HEAD | cut -d'/'-f 2;}
+
+glt() {
+  LAST_TAG=$(git for-each-ref --format="%(refname:short)" --sort=taggerdate refs/tags | tail -1 | git for-each-ref --format="%(refname:short)" --sort=taggerdate refs/tags | tail -1);
+  echo $LAST_TAG | xargs echo -n | pbcopy;
+  echo "LAST TAG:"$LAST_TAG;
+}
+
+gut (){
+    git tag -d $1;
+    git push origin :refs/tags/$1;
+}

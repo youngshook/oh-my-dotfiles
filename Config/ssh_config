@@ -1,0 +1,20 @@
+Host github.com
+	HostName github.com
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/id_rsa
+
+Host mobile
+	HostName 192.168.8.225
+	User mobile
+	IdentityFile ~/.ssh/id_rsa
+
+Host homemac
+	HostName  youngshook.ml
+	User YoungShook
+	Port 7722
+	IdentityFile ~/.ssh/id_rsa
+
+Host google-ys
+	HostName  youngshook.com
+	User shook.young
+	IdentityFile ~/.ssh/id_rsa_google
