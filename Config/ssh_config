@@ -9,12 +9,17 @@ Host mobile
 	IdentityFile ~/.ssh/id_rsa
 
 Host homemac
-	HostName  youngshook.ml
+	HostName 115.171.202.64
 	User YoungShook
 	Port 7722
 	IdentityFile ~/.ssh/id_rsa
 
 Host google-ys
 	HostName  youngshook.com
+	User shook.young
+	IdentityFile ~/.ssh/id_rsa_google
+
+Host google-hk
+	HostName  35.241.81.226
 	User shook.young
 	IdentityFile ~/.ssh/id_rsa_google
