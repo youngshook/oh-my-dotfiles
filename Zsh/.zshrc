@@ -74,7 +74,7 @@ plugins=(git z brew ruby wd bundler gem rails rvm  rake sublime knife encode64 e
 
 # User configuration
 
-export PATH="$HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Users/YoungShook/.rvm/gems/ruby-2.3.1/bin:/Users/YoungShook/.rvm/gems/ruby-2.3.1@global/bin:/Users/YoungShook/.rvm/rubies/ruby-2.3.1/bin:/opt/iOSOpenDev/bin:/Users/YoungShook/.rvm/bin:/usr/local/nginx/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:/Users/YoungShook/bin:/Users/YoungShook/Dropbox/bin:/usr/local/openresty/nginx/sbin:/Users/YoungShook/.rbenv/shims:/Users/YoungShook/.rvm/bin:~/bin:/Users/YoungShook/.rvm/gems/ruby-2.3.1/bin"
+export PATH="$HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/local/share/npm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Applications/Server.app/Contents/ServerRoot/usr/bin:/Applications/Server.app/Contents/ServerRoot/usr/sbin:/Users/YoungShook/.rvm/gems/ruby-2.3.1/bin:/Users/YoungShook/.rvm/gems/ruby-2.3.1@global/bin:/Users/YoungShook/.rvm/rubies/ruby-2.3.1/bin:/opt/iOSOpenDev/bin:/Users/YoungShook/.rvm/bin:/usr/local/nginx/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/usr/local/mysql/bin:/Users/YoungShook/bin:/Users/YoungShook/Dropbox/bin:/usr/local/openresty/nginx/sbin:/Users/YoungShook/.rbenv/shims:/Users/YoungShook/.rvm/bin:~/bin:/Users/YoungShook/.rvm/gems/ruby-2.3.1/bin:/usr/local/opt/coreutils/libexec/gnubin"
 
 export MANPATH="/usr/local/man:$MANPATH"
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
